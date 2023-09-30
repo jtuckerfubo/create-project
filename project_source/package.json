@@ -1,0 +1,16 @@
+{
+  "name": "temp1",
+  "version": "1.0.0",
+  "description": "brighterscript project",
+  "main": "index.js",
+  "scripts": {
+    "build-tests": "npx bsc --project bsconfig-tdd.json"
+  },
+  "keywords": [],
+  "author": "jt",
+  "license": "ISC",
+  "devDependencies": {
+    "brighterscript": "^0.65.7",
+    "rooibos-roku": "^5.7.0"
+  }
+}

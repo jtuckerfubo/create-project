@@ -1,0 +1,12 @@
+{
+  "stagingDir": "dist",
+  "retainStagingDir": true,
+  "createPackage": false,
+  "sourceMap": true,
+  "autoImportComponentScript": true,
+  "rootDir": "src",
+  "files": [
+    "**/*",
+    "!**/*.spec.bs"
+  ]
+}

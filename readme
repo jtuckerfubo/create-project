@@ -1,0 +1,5 @@
+this creates a simple brightscript project for vscode
+type "create-project" with a directory name as an argument
+the directory will be created in the current location
+
+
