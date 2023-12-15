@@ -20,7 +20,8 @@
     "dotenv": "^16.3.1",
     "mocha": "^10.2.0",
     "roku-test-automation": "^2.0.0",
-    "rooibos-roku": "^5.8.0"
+    "rooibos-roku": "^5.8.0",
+    "ts-node": "^10.9.2"
   },
   "mocha": {
     "timeout": 72000
