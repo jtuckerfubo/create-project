@@ -1,0 +1,68 @@
+const TIME_TO_LIVE_DURATION = 10
+const BUTTON_PRESS_LIMIT = 10 
+
+sub init()
+    ' roku test automation
+    m.odc = createObject("roSGNode", "RTA_OnDeviceComponent") 'bs:disable-line 1128
+
+    resetTimeToLive()
+    m.pressCount = 0
+    m.title = m.top.findNode("title")
+    m.button = m.top.findNode("button")
+    m.message = m.top.findNode("message")
+    m.timeToLive = m.top.findNode("timeToLive")
+
+    initUI()
+    appLaunchComplete()
+end sub
+
+sub initUI()
+    updateUI()
+    m.ttlTimer = createObject("rosgnode", "timer")
+    m.ttlTimer.observeField("fire", "onLifeTimerFired")
+    m.ttlTimer.repeat = true
+    m.ttlTimer.control = "start"
+    m.title.text = "Welcome to the button app"
+    m.button.text = "Press me!"
+    m.button.observeField("buttonSelected", "onButtonSelected")
+    m.button.setFocus(true)
+end sub
+
+sub onLifeTimerFired()
+    m.ttl -= 1
+    if m.ttl = 0 then 
+        exitApp()
+    else
+        updateUI()
+    end if
+end sub
+
+sub onButtonSelected()
+    resetTimeToLive()
+    m.pressCount += 1
+    if m.pressCount = BUTTON_PRESS_LIMIT then
+        exitApp()
+    else
+        updateUI()
+    end if
+end sub
+
+sub updateUI()
+    timesStr = m.pressCount = 1 ? " time" : " times"
+    m.message.text = "Button has been pressed " + m.pressCount.tostr() + timesStr 
+    secondsStr = m.ttl = 1 ? " second" : " seconds"
+    m.timeToLive.text = "Time to live " + m.ttl.tostr() + secondsStr 
+end sub
+
+sub resetTimeToLive()
+    m.ttl = TIME_TO_LIVE_DURATION
+end sub
+
+sub appLaunchComplete()
+    m.top.signalBeacon("AppLaunchComplete")
+    m.top.appLaunchComplete = true
+end sub
+
+sub exitApp()
+    m.top.appComplete = true
+end sub

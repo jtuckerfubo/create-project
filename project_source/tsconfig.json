@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "allowJs": false,
+        "module": "commonjs",
+        "target": "es6",
+        "lib": [
+            "esnext"
+        ],
+        "sourceMap": true,
+        "downlevelIteration": true,
+        "incremental": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "scripts/**/*.ts",
+        "ui-tests/**/*.spec.ts"
+    ],
+    "ts-node": {
+        "transpileOnly": true
+    }
+}

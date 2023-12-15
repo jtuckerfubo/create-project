@@ -9,5 +9,6 @@
         "**/node_modules": true
     },
     "brightscript.debug.envFile": "${workspaceFolder}/.env",
-    "brightscript.bsdk": "./node_modules/brighterscript"
+    "brightscript.bsdk": "./node_modules/brighterscript",
+    "output.smartScroll.enabled": false
 }

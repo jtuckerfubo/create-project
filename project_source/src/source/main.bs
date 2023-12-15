@@ -2,19 +2,17 @@ sub main()
     screen = CreateObject("roSGScreen")
     m.port = CreateObject("roMessagePort")
     screen.setMessagePort(m.port)
-    scene = screen.createScene("Scene")
+    scene = screen.createScene("MainScene")
     screen.show()
-
-    label = createObject("roSGNode", "Label")
-    label.text = "Hello World!"
-    scene.appendChild(label)
+    scene.observeField("appComplete", m.port)
 
     while(true)
         msg = wait(0, m.port)
         msgType = type(msg)
         if msgType = "roSGScreenEvent"
             if msg.isScreenClosed() then return
+        else if msgType = "roSGNodeEvent" then
+            if msg.getField() = "appComplete" and msg.getData() = true then return
         end if
     end while
 end sub
-

@@ -1,0 +1,5 @@
+{
+  "extends": "./bsconfig.json",
+  "stagingDir": "dist",
+  "retainStagingDir": true
+}

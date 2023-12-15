@@ -2,27 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
-            "type": "shell",
-            "command": "npx bsc"
+            "label": "build-app",
+            "type": "npm",
+            "script": "build-app"
         },
         {
-            "label": "build-tests",
-            "type": "shell",
-            "command": "npm run build-tests",
-            "problemMatcher": [],
-            "presentation": {
-              "echo": true,
-              "reveal": "silent",
-              "focus": false,
-              "panel": "shared",
-              "showReuseMessage": false,
-              "clear": true
-            },
-            "group": {
-              "kind": "build",
-              "isDefault": true
-            }
+          "label": "build-unit-tests",
+          "type": "npm",
+          "script": "build-unit-tests"
+        },
+        {
+          "label": "build-ui-tests",
+          "type": "npm",
+          "script": "build-ui-tests"
         }
     ]
 }

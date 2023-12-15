@@ -1,0 +1,16 @@
+<component name="MainScene" extends="Scene">
+    <interface>
+        <field id="appLaunchComplete" type="boolean" value="false" />
+        <field id="appComplete" type="boolean" value="false" />
+    </interface>
+
+    <children>
+        <layoutgroup itemspacings="[50]" translation="[100, 100]">
+            <label id="title" />
+            <button id="button" focusbitmapuri="" iconuri="" focusediconuri="" />
+            <label id="message" />
+            <label id="timeToLive" />
+        </layoutgroup>
+    </children>
+
+</component>
