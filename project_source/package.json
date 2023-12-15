@@ -1,5 +1,5 @@
 {
-  "name": "rta-cli-node-config",
+  "name": "node-config",
   "version": "1.0.0",
   "description": "brighterscript project",
   "main": "index.js",
